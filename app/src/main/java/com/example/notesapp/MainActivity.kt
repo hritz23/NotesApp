@@ -28,6 +28,15 @@ class MainActivity : AppCompatActivity() {
 
         initUi()
 
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(NoteViewModel::class.java)
+
+        viewModel.allNotes.observe(this){ list->
+            list?.let { adapter.updateList(list) }
+        }
+
     }
 
     private fun initUi() {

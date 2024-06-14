@@ -12,6 +12,7 @@ constraintlayout = "2.1.4"
 room_version = "2.6.1"
 lifecycle = "2.8.1"
 coroutines = "1.7.3"
+al = "7.2.0"
 
 [libraries]
 room = { module = "androidx.room:room-ktx", version.ref = "room_version" }
@@ -31,5 +32,6 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-lilbrary = { id = "com.android.library", version.ref="al"}
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 

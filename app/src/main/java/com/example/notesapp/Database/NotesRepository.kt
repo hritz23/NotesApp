@@ -16,6 +16,6 @@ class NotesRepository(private val noteDao: NoteDao) {
     }
 
     suspend fun update(notes: Notes) {
-        noteDao.update(notes.id, notes.title, notes.note)
+        noteDao.update(notes.id, notes.title, notes.note, notes.date)
     }
 }

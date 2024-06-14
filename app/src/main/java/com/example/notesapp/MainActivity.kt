@@ -2,18 +2,13 @@ package com.example.notesapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Note
 import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.PopupMenu
 import android.widget.SearchView
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.notesapp.Adapter.NotesAdapter
@@ -21,7 +16,6 @@ import com.example.notesapp.Database.NoteDatabase
 import com.example.notesapp.Models.NoteViewModel
 import com.example.notesapp.Models.Notes
 import com.example.notesapp.databinding.ActivityMainBinding
-import org.w3c.dom.Node
 
 class MainActivity : AppCompatActivity() , NotesAdapter.NotesClickListener, PopupMenu.OnMenuItemClickListener {
 
@@ -70,7 +64,7 @@ class MainActivity : AppCompatActivity() , NotesAdapter.NotesClickListener, Popu
         val getContent =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == RESULT_OK) {
-                    val note = result.data?.getSerializableExtra("note") as? Notes
+                    val note = result.data?.getSerializableExtra("update_note") as? Notes
                     if (note != null) {
                         viewModel.insertNote(note)
                     }

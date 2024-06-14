@@ -39,7 +39,7 @@ class AddNote : AppCompatActivity() {
             val title = binding.etTitle.text.toString()
             val note_desc = binding.etNote.text.toString()
 
-            if (title.isNotEmpty() || note_desc.isNotEmpty()){
+            if (title.isNotEmpty() && note_desc.isNotEmpty()){
                 val formatter = SimpleDateFormat("EEE, d MMM YYYY HH:mm a" )
                 if (isUpdate){
                     note = Notes(oldNote.id,title,note_desc,formatter.format(Date()))

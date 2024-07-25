@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() , NotesAdapter.NotesClickListener, Popu
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var database : NoteDatabase
-    lateinit var viewModel: NoteViewModel
+    private lateinit var viewModel: NoteViewModel
     lateinit var adapter: NotesAdapter
-    lateinit var selectNode : Notes
+    private lateinit var selectNode : Notes
 
     private val updateNote =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {result ->
